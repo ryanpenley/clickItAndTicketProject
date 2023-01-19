@@ -1,0 +1,81 @@
+:root {
+    --rp-primary-color: rgb(106, 180, 173);
+    --rp-secondary-color:rgba(102, 102, 102, 0.1) ;
+    --rp-dark-color: #212121 ;
+    --rp-light-color: whitesmoke ;
+
+    --rp-nav-toggler-color: var(--rp-secondary-color);
+    --rp-nav-toggler-glow: rgba(102, 102, 102, 0.4);
+}
+
+html,
+body {
+    height: 100%
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+.content{
+    flex: 1 0 auto;
+}
+footer {
+    flex-shrink: 0;
+}
+
+/* Start: main Nav Overrides */
+#mainNav {
+    background-color: var(--rp-dark-color);
+}
+
+#mainNav button {
+    border-color: var(--rp-secondary-color);
+}
+
+.navbar-toggler {
+    color: var(--rp-nav-toggler-glow);
+}
+
+.navbar-toggler-icon-rp {
+    color: var(--rp-nav-toggler-color);
+    font-size: 1.5rem;
+}
+
+/* End: main nav overrides */
+
+
+/* Start: footer styles */
+
+footer {
+    background-color: var(--rp-dark-color);
+    color: var(--rp-light-color)
+}
+
+.socialicons {
+    font-size: 2rem;
+    padding-left: .5rem;
+    color: var(--rp-primary-color);
+}
+
+.socialicons:hover {
+    color: var(--rp-light-color);
+}
+
+/* End: footer styles */
+
+.appLogo {
+    max-width: 400px;
+}
+
+.checkList {
+    list-style-type: none;
+}
+
+.checkList > li i {
+    color: var(--rp-primary-color);
+}
+
+.devIcons {
+    font-size: 4rem;
+    padding-left: .5rem;
+}
