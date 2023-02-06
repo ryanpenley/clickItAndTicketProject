@@ -70,7 +70,7 @@ function buildDropDown() {
     dropdownMenu.innerHTML = '';
 
     // get our events
-    let currEvents = events;
+    let currEvents = getEventData();
 
     // pull out JUST the city names
     let eventCities = currEvents.map( (event) => event.city );
@@ -170,4 +170,71 @@ function displayEventsData(eventsArray) {
 
         tableBody.appendChild(eventRow);
     }
+}
+
+function getEventData() {
+  let currentEvents = JSON.parse(localStorage.getItem('rp-eventData') );
+
+  if (currentEvents == null) {
+      currentEvents = events;
+      localStorage.setItem('rp-eventData', JSON.stringify(currentEvents) )
+  }
+
+  return currentEvents;
+}
+
+
+function getEvents(element) {
+  let currentEvents = getEventData();
+
+  let cityName = element.getAttribute('data-string');
+
+
+  let filteredEvents = currentEvents;
+
+  if (cityName != 'All') {
+    filteredEvents = currentEvents.filter(
+      function (event) {
+        if (cityName == event.city) {
+          return event;
+        }
+      }
+    );
+  }
+
+  document.getElementById('statsHeader').textContent = cityName;
+  displayStats(filteredEvents);
+  displayEventsData(filteredEvents);
+}
+
+function saveEventData() {
+  let eventName = document.getElementById('newEventName').value;
+  let cityName = document.getElementById('newEventCity').value;
+  let eventAttendance = parseInt(document.getElementById('newEventAttendance').value);
+  let eventDate = document.getElementById('newEventDate').value;
+  
+  eventDate = `${eventDate} 00:00`;
+  eventDate = new Date(eventDate).toLocaleDateString();
+
+
+  let stateSelect = document.getElementById('newEventState');
+  let state = stateSelect.options[stateSelect.selectedIndex].text;
+
+  let newEvent = {
+    attendance: eventAttendance,
+    event: eventName,
+    date: eventDate,
+    state: state,
+    city: cityName,
+  };
+
+  let currentEvents = getEventData();
+  currentEvents.push(newEvent);
+
+  localStorage.setItem("rp-eventData", JSON.stringify(currentEvents));
+
+  // update the page
+  buildDropDown();
+  document.getElementById('statsHeader').textContent = 'All';
+  document.getElementById('newEventForm').requestFullscreen();
 }
