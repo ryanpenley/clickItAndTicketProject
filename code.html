@@ -53,15 +53,12 @@
                             <a class="nav-link active" aria-current="The Code Page" href="/code.html">The Code</a>
                         </li>
                         <li class="nav-item">
-                            <!-- Put Git repo in -->
-                            <a class="nav-link" href="https://github.com/ryanpenley/clickItAndTicketProject">The Repo</a>
+                            <a class="nav-link" href="https://github.com/ryanpenley/mortgageCalcApp">The Repo</a>
                         </li>
                         <li class="nav-item">
-                            <!-- Portofolio link in -->
                             <a class="nav-link" href="https://ryanpenley.dev/">About</a>
                         </li>
                         <li class="nav-item">
-                            <!-- Blog link in -->
                             <a class="nav-link" href="https://humblehacker.up.railway.app/">Blog</a>
                         </li>
                     </ul>
@@ -323,9 +320,40 @@
                 </div>
                 <!-- Code Description -->
                 <div class="col-12 col-lg-4">
-                    <p>The code is structured in one function</p>
-                    <h5><code>displayMessage()</code></h5>
-                    <p>This function displays the message in a Sweet Alert.</p>
+                    <p>This code is structured in six functions</p>
+                    <h5><code>buildDropDown()</code></h5>
+                    <p>
+                        This function populates the data in the dropdown menu that allows the user to select a city that
+                        can be used to filter
+                        and display the data for the events in that city. It first gets the dropdown menu element from
+                        the HTML page and clears
+                        its contents. Then it calls the getEventData function to retrieve the current list of events. It
+                        uses the map() method
+                        to create an array of just the city names from the events and uses the set object to get one the
+                        distinct city names.
+                    </p>
+                    <h5><code>displayStats()</code></h5>
+                    <p>
+                        This function calculates and displays statistics for the events, including the total attendance,
+                        average attendance,
+                        minimum attendance, and maximum attendance. It calls the calculateStats() function to calculate
+                        these statistics
+                        from the given events array and updates the text content of corresponding HTML elements.
+                    </p>
+                    <h5><code>displayEventsData()</code></h5>
+                    <p>
+                        This function displays event data in a table on the HTML page. It first gets the table body
+                        element and clears its contents.
+                        Then, it loops through each event in the given events array and creates a table row for each
+                        event,
+                        populating it with the appropriate event data. Finally, it appends the row to the table body.
+                    </p>
+                    <h5><code>getEventData()</code></h5>
+                    <p>
+                        This function retrieves event data from local storage or the hard-coded events array if there is
+                        no data in storage.
+                        The localStorage object is used to store and retrieve data in the browser's local storage.
+                    </p>
                 </div>
             </div>
         </main>
@@ -340,9 +368,12 @@
                         <img src="/img/RPWhite logo - no background.svg" height="60">
                     </div>
                     <div class="col text-center text-lg-center">
-                        <a href="https://www.linkedin.com/in/ryan-penley-459892102/" target="_blank" class="socialicons"><i class="bi bi-linkedin"></i></a>
-                        <a href="https://twitter.com/ryanpenleydev" target="_blank" class="socialicons"><i class="bi bi-twitter"></i></a>
-                        <a href="https://github.com/ryanpenley?tab=repositories" target="_blank" class="socialicons"><i class="bi bi-github"></i></a>
+                        <a href="https://www.linkedin.com/in/ryan-penley-459892102/" target="_blank"
+                            class="socialicons"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://twitter.com/ryanpenleydev" target="_blank" class="socialicons"><i
+                                class="bi bi-twitter"></i></a>
+                        <a href="https://github.com/ryanpenley?tab=repositories" target="_blank" class="socialicons"><i
+                                class="bi bi-github"></i></a>
                     </div>
                 </div>
             </div>
