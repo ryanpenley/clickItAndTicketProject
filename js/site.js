@@ -236,5 +236,5 @@ function saveEventData() {
   // update the page
   buildDropDown();
   document.getElementById('statsHeader').textContent = 'All';
-  document.getElementById('newEventForm').requestFullscreen();
+  document.getElementById('newEventForm').reset();
 }
